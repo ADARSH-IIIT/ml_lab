@@ -1,0 +1,87 @@
+df.info()   ====> tells about 
+Data columns (total 24 columns):
+ #   Column                 Non-Null Count  Dtype  
+---  ------                 --------------  -----  
+ 0   adult                  49 non-null     bool   
+ 1   belongs_to_collection  10 non-null     object 
+ 2   budget                 49 non-null     int64  
+ 3   genres                 49 non-null     object 
+ 4   homepage               5 non-null      object 
+ 5   id                     49 non-null     int64  
+ 6   imdb_id                49 non-null     object 
+ 7   original_language      49 non-null     object 
+ 8   original_title         49 non-null     object 
+ 9   overview               48 non-null     object 
+ 10  popularity             49 non-null     float64
+ 11  poster_path            49 non-null     object 
+ 12  production_companies   49 non-null     object 
+
+
+
+
+ df.describe() tells about measn max min count of a col
+
+
+ # ================================
+# 3. iloc examples
+# ================================
+print("\nRow 2:")
+
+#  iloc 2,3 2nd row 3rd col only
+# [  2:4 , 3:5]  2,3 row ka 3,4 col only 
+print(df.iloc[2])
+
+
+
+
+
+le in your code is:
+
+from ast import literal_eval as le
+
+
+So le = literal_eval.
+
+✅ What does literal_eval (le) do?
+
+literal_eval converts a string that looks like Python data
+into real Python list, dict, tuple, int, etc.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+df_bfill = df.bfill()
+df_ffill = df.ffill()
+
+print("\nBackward Fill:\n", df_bfill)
+print("\nForward Fill:\n", df_ffill)
+Yes — df.bfill() and df.ffill() each return a new DataFrame.
+They do not change your original df unless you explicitly assign back using inplace=True (which these functions do not support).
+
+
+
+
+
+
+df.loc[df["Salary"] < 0, "Salary"] = np.nan
+df.loc[df["Bonus"] < 0, "Bonus"] = np.nan
+
+✅ What df.loc Does
+✔ df.loc[rows, columns]
+
+
+koni row aur col selct krna is done by df.loc 
+This allows you to select or update specific rows and columns by their labels.
+df.loc is one of the most important Pandas features — it is used for label-based row/column selection and assignment.
+
